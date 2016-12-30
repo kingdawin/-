@@ -1,0 +1,19 @@
+使uiautomator封装的Python编写安卓测试脚本
+
+1.下载uiautomator
+地址:https://github.com/kingdawin/uiautomator   
+     https://pypi.python.org/pypi/uiautomator 
+
+2.环境变量 添加Python目录的script路径，因为要用此路径下的pip.exe工具安装uiautomaor
+C:\Users\101004679\AppData\Local\Programs\Python\Python35-32\Scripts
+
+3.两种安装uiautomator的方法
+1）pip install uiautomator(联网安装)
+2）python setup.py install（已下载离线包）
+
+4.按照github，使用模块的api编写脚本
+https://github.com/kingdawin/uiautomator  
+
+tip
+打开Python ide Spyder后，adb会启动
+，在用MonkeyRunner写测试脚本时，要先关闭Spyder

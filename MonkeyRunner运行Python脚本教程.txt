@@ -1,0 +1,40 @@
+MonkeyRunner是sdk自带的测试工具，在android_sdk\tools里面
+
+使用MonkeryRunner运行Python编写的python代码必须放在sdk/tools目录下，并配置Path环境变量:..sdk/tools
+
+步骤：
+1.创建Python脚本代码文件monkeyrunnerTest.py，复制下面代码到文件中
+
+# Imports the monkeyrunner modules used by this program
+from com.android.monkeyrunner import MonkeyRunner, MonkeyDevice, MonkeyImage
+# Connects to the current device, returning a MonkeyDevice object
+device = MonkeyRunner.waitForConnection()
+# 按下手机的菜单键
+device.press('KEYCODE_MENU', MonkeyDevice.DOWN_AND_UP)
+
+然后，把文件放到sdk/tools目录.
+
+在python中使用中文，需要在文件开头将编码设置为utf-8,否则乱码
+# -*- coding: utf-8 -*-
+如果使用编辑器打开，还要设置编辑器编码格式为utf-8
+
+2.
+最后我们打开cmd命令行窗口，命令行中运行脚本即可：
+monkeyrunner.bat monkeyrunnerTest.py
+
+
+
+=============================================我是分割线=========================================
+
+由于monkeyrunner是一个API工具包，您可以基于Python模块和程序开发一整套系统，以此来控制Android设备。
+除了使用monkeyrunner API之外，您还可以使用标准的Python os和subprocess模块来调用如adb这样的Android工具。       
+您还可以向monkeyrunner API中添加您自己的类。我们将在使用插件扩展monkeyrunner一节中对此进行详细讨论。
+
+
+
+详细的MonkeyRunner API说明：
+https://github.com/yeetrack/monkeyrunner
+
+查看当前模拟器
+在cmd窗口输入
+adb devices
